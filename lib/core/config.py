@@ -42,7 +42,7 @@ cfg.DEBUG = True
 cfg.LOGDIR = '/data/guest/src/MPS-Net_release'
 cfg.NUM_WORKERS = 8
 cfg.DEBUG_FREQ = 1000
-cfg.SEED_VALUE = -1
+cfg.SEED_VALUE = 42
 cfg.render = False
 
 cfg.CUDNN = CN()

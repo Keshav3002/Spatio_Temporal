@@ -181,8 +181,14 @@ class Trainer():
 
             timer['data'] = time.time() - start
             start = time.time()
-
-            preds, scores, preds_Dm = self.generator(inp, is_train=True)    
+            # breakpoint()
+            inp1 = torch.randn(32,16,112, 112,16).to(device="cuda")
+            # breakpoint()
+            # inp1 = torch.flatten(inp1)
+            inp1 = inp1.reshape(32,16,112*112*16)
+            inp2 = torch.randn(32,16,154).to(device="cuda")
+            inp3 = torch.randn(32,16,3).to(device="cuda")
+            preds, scores, preds_Dm = self.generator(inp1,inp2,inp3, is_train=True)    
 
             timer['forward'] = time.time() - start
             start = time.time()
